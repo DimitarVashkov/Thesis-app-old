@@ -1,0 +1,71 @@
+.reveal .pyroBox{
+	width: 35vh;
+	height: 3vh;
+	margin: auto;
+	
+
+}
+
+.red{
+	background-color: #85144b;
+}
+
+.orange{
+	background-color: #FF851B;
+	width:55vh;
+}
+
+
+.yellow{
+	background-color: #FFDC00;
+	width: 75vh;
+}
+.blue{
+	background-color: #0074D9;
+	width: 95vh;
+}
+
+.green{
+	background-color:#2ECC40;
+	width: 115vh;
+
+}
+
+
+.reveal .pyroBoxSmall{
+	position: fixed;
+	top: 2%;
+	height: 2vh;
+	left: 50%;
+    transform: translateX(-50%);
+	margin: auto;
+	
+}
+
+.reveal .pyroBoxBig{
+	position: fixed;
+	bottom: 2%;
+	height: 2vh;
+	margin: auto;
+	left: 50%;
+    transform: translateX(-50%);
+}
+
+
+
+.reveal #final{
+	width: 50vh;
+	height: 2vh;
+	margin: auto;
+	background-color:#2ECC40;
+}
+
+.greenTextSpan{
+	color: fff;
+	cursor: pointer;
+}
+
+.greenTextSpan:hover{
+	color: #2ECC40;
+}
+

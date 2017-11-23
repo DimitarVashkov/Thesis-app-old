@@ -1,0 +1,33 @@
+doctype html
+html
+    head
+        title= 'Energy Efficiency'
+        link(rel='stylesheet', href='/stylesheets/login.css')
+
+    body
+        .wrapper
+            .container
+                h1 Welcome
+                form.form(method="post",action="/")
+                    input(type="text", placeholder="Username",name='username',id='userName')
+                    input(type="password", placeholder="Password", name='password',id='passWord')
+                    button#login-button(type="submit") Login
+
+                p
+                    | You don't have an account?
+                form.form(method="post",action="/")
+                    button(type="submit",name='register',value='reg') Register
+            ul.bg-bubbles
+                li
+                li
+                li
+                li
+                li
+                li
+                li
+                li
+                li
+                li
+
+        script(src="javascripts/jquery.js")
+

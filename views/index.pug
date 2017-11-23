@@ -1,0 +1,145 @@
+extends layout
+
+block content
+	.coverContainer
+		section#cover.cover
+			h1.coverHeading(contenteditable="", data-heading="Energy efficiency") Energy efficiency
+			ul.bubbles
+				li
+				li
+				li
+				li
+				li
+				li
+				li
+				li
+				li
+				li
+				li
+				li
+				li
+				li
+
+			form(action="/",method="POST",style="position:relative;top:90%")
+				button.btn.myBtn.colorRed(type="submit",name="logout",value = "leave")
+					| Log out
+			p.animated.shake Scroll
+
+	.container
+			section
+				h1.titleFAQ 
+					| FAQ
+					
+					p
+						| Hey #{user}, do you have time some time to reflect on your energy consumption?
+					
+			// END OF TOGGLE
+			.toggle.spacer
+				.toggle-title
+					h3
+						i
+						span.title-name  Why should I care about the way I use energy?
+				.toggle-inner
+					p
+						| Short answer: You'll save time and money.
+					p
+						| Long answer: While we do sometimes notice the results of our consumption and energy usage, we typically don't put them in perspective. That's because we see them too up close - day by day, week by week. However, small changes in our everyday practises can lead to big changes in the long run. 
+								
+			.toggle
+				.toggle-title
+					h3
+						i
+						span.title-name What contributes to my energy bill the most?
+				.toggle-inner
+					.row
+						.col
+							p
+								| Usually keeping your accommodation warm and heating water. For you, #{user}, those currently contribute 73 % to your bill.
+						.col
+							canvas#generalChart
+			// END OF TOGGLE
+			
+			.toggle
+				.toggle-title
+					h3
+						i
+						span.title-name  What can I personally change to make a difference in my bill?
+				.toggle-inner
+					
+					#focusDiv.container.info.heightLimited
+						.row
+							button#pyramid.text-center.btn.myBtn.colorBlue Start
+						
+							button#heating.text-center.btn.myBtn Heating
+						
+							button#water.text-center.btn.myBtn Water
+						
+							button#laundry.text-center.btn.myBtn Laundry
+						
+							button#cooking.text-center.btn.myBtn Cooking
+						#contentRow.row
+							.explain
+								.containerPyramid.hiddenStuff
+									h3.text-center(style="margin:8vh")
+										| I don't think I'll have enough space here.
+										br
+										| Let's go somewhere else.
+									form(action="/",method="POST")
+										button.btn.myBtn.colorRed(type="submit",value="button",name="slideshow",style="margin:auto") Click me
+									//include slider.pug
+
+								.containerHeating.hiddenStuff
+									include heatingTodo.pug
+
+								.containerWater.hiddenStuff
+									include waterTodo.pug
+
+								.containerLaundry.hiddenStuff
+									include laundryTodo.pug
+
+								.containerCooking.hiddenStuff
+									include cookingTodo.pug					
+			
+				// END OF TOGGLE
+			
+			.toggle
+				.toggle-title
+					h3
+						i
+						span.title-name What does 1£ of energy use look like?
+				.toggle-inner
+					.row
+						img#infograph.spacer(src="images/Infograph.png")
+
+			
+
+			// END OF TOGGLE
+
+			.toggle
+				.toggle-title
+					h3
+						i
+						span.title-name   Can you visualize this in a different way?
+				.toggle-inner
+					p
+						| Sure.
+					img#houseOutside.animated.pulse.infinite(src="images/HouseOutside.png")
+					img#houseInside.hiddenStuff(src="images/HouseInside.png")
+
+	.container(style="height:40vh")
+		
+
+
+			
+	script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js")
+				
+	script(src="javascripts/jquery.js")
+	script(src="javascripts/ScrollMagic.js")
+	script(src="javascripts/index.js")
+	script(src="javascripts/infograph.js")
+	script(src="javascripts/var.js")
+	
+
+	
+	
+	

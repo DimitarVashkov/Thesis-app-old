@@ -1,0 +1,114 @@
+doctype html
+html
+	head
+		title Information
+		link(rel='stylesheet', href='/stylesheets/reveal.css')
+		link(rel='stylesheet', href='/stylesheets/theme/night.css')
+		link(rel='stylesheet', href='/lib/css/zenburn.css')
+		link(rel='stylesheet', href='/stylesheets/pyro.css')
+		link(rel='stylesheet', href='/stylesheets/var.css')
+	body
+		.reveal
+			.slides
+				section
+
+					section
+						h4(id="firstH")
+							| Explore our energy-efficient diet
+						p(id="firstP")
+							| The first step to change is awareness.
+						button.btn.myBtn.colorRed(style="margin:auto",id="return")
+							a(href="/main")
+								| Back
+					section
+
+						h3
+							| Rarely or never
+						p
+							| 10+ min showers or baths
+						p
+							| Overdrying clothes
+						p
+							| Underfilling or overfilling laundry
+						p
+							| Putting hot food in the fridge
+
+						#triangle.pyroBox.red
+					section
+						.pyroBoxSmall.orange
+						h3
+							| Ocassionally 
+						p
+							| Machine drying on low temperature
+						p
+							| High temperature wash for whites
+						p
+							| Dishwashing by hand
+
+						.pyroBoxBig.orange
+					section
+						.pyroBoxSmall.yellow
+						h3
+							| Sometimes
+						p
+							| Cold washing laundry with high spinning
+						p
+							| Dishwashing on low temperature
+						p
+							| Heating using electricity but being efficient
+						.pyroBoxBig.yellow
+					section
+						.pyroBoxSmall.blue
+						h3
+							| Often
+						p
+							| 5-6 min showers
+						p
+							| Keeping your bedroom a bit colder (~16º)
+
+						.pyroBoxBig.blue
+					section
+						.pyroBoxSmall.green
+						h3
+							| Always
+						p
+							| Thermostat at 18º
+						p
+							| Hanging clothes to dry
+						p
+							| Cover pots and pans when cooking
+						p
+							| Not leaving the water running while doing something else
+						.pyroBoxBig.green
+					section
+						h3
+							| The second step to change is action.
+						p
+							| Promise to do your best? 
+						span.greenTextSpan
+							| YES?
+						#final
+
+		script(src="lib/js/head.min.js")
+		script(src="javascripts/reveal.js")
+		script(src="javascripts/jquery.js")
+		script.
+			Reveal.initialize({
+					dependencies: [
+						{ src: 'plugin/markdown/marked.js' },
+						{ src: 'plugin/markdown/markdown.js' },
+						{ src: 'plugin/notes/notes.js', async: true },
+						{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+					]
+				});
+		script.
+			$(".greenTextSpan").click(function(){
+			$("#return").removeClass("colorRed");
+			$("#return").addClass("colorGreen");
+			$("#firstH").text("That's all for now!");
+			$("#firstP").text("Click the button below to go to the main page!");
+			Reveal.slide(0);
+			});
+
+
+
