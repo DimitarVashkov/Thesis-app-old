@@ -21,7 +21,7 @@ block content
 				li
 
 			form(action="/",method="POST",style="position:relative;top:90%")
-				button.btn.myBtn.colorRed(type="submit",name="logout",value = "leave")
+				button.buttons.myBtn.colorRed(type="submit",name="logout",value = "leave")
 					| Log out
 			p.animated.shake Scroll
 
@@ -54,40 +54,55 @@ block content
 					.row
 						.col
 							p
-								| Usually keeping your accommodation warm and heating water. For you, #{user}, those currently contribute 73 % to your bill.
+								| Usually keeping your accommodation warm and heating water. For you #{user} those currently contribute 73 % to your bill.
 						.col
 							canvas#generalChart
 			// END OF TOGGLE
+			.toggle
+				.toggle-title
+					h3
+						i
+						span.title-name What should I do to make a difference in my bill?
+				.toggle-inner
+					.containerPyramid
+						h3.text-center(style="margin:4vh")
+							| I don't think I'll have enough space here.
+							br
+							| Let's go somewhere else.
+						form(action="/",method="POST")
+							button.buttons.myBtn.colorRed(type="submit",value="button",name="slideshow",style="margin:auto") Click me
+
 			
 			.toggle
 				.toggle-title
 					h3
 						i
-						span.title-name  What can I personally change to make a difference in my bill?
+						span.title-name  I'm more of a checklist person.
 				.toggle-inner
 					
 					#focusDiv.container.info.heightLimited
 						.row
-							button#pyramid.text-center.btn.myBtn.colorBlue Start
+							button#heating.text-center.buttons.myBtn.colorRed Heating
 						
-							button#heating.text-center.btn.myBtn Heating
+							button#water.text-center.buttons.myBtn.colorBlue Water
 						
-							button#water.text-center.btn.myBtn Water
+							button#laundry.text-center.buttons.myBtn.colorPurple Laundry
 						
-							button#laundry.text-center.btn.myBtn Laundry
-						
-							button#cooking.text-center.btn.myBtn Cooking
+							button#cooking.text-center.buttons.myBtn.colorYellow Cooking
+						.row
+							.col
+								.progress
+									.progress-bar.progress-bar-striped.bg-danger(role="progressbar",aria-valuenow="0",aria-valuemin="0",aria-valuemax="100",style="width:0%",id="progressBar")
+										h1.invisible
+											| Progressbar
+							.col
+								h4.achievementTitle
+									| You are 0% energy-efficient!
+  
+							
 						#contentRow.row
 							.explain
-								.containerPyramid.hiddenStuff
-									h3.text-center(style="margin:8vh")
-										| I don't think I'll have enough space here.
-										br
-										| Let's go somewhere else.
-									form(action="/",method="POST")
-										button.btn.myBtn.colorRed(type="submit",value="button",name="slideshow",style="margin:auto") Click me
-									//include slider.pug
-
+								
 								.containerHeating.hiddenStuff
 									include heatingTodo.pug
 
@@ -98,7 +113,10 @@ block content
 									include laundryTodo.pug
 
 								.containerCooking.hiddenStuff
-									include cookingTodo.pug					
+									include cookingTodo.pug
+
+								form(action="/",method="POST",id="pref").hiddenStuff
+									button.buttons.saveBtn(type="submit",value="save",name="preferences",style="margin:auto", id="savePref") Save		
 			
 				// END OF TOGGLE
 			
@@ -115,31 +133,26 @@ block content
 
 			// END OF TOGGLE
 
-			.toggle
-				.toggle-title
-					h3
-						i
-						span.title-name   Can you visualize this in a different way?
-				.toggle-inner
-					p
-						| Sure.
-					img#houseOutside.animated.pulse.infinite(src="images/HouseOutside.png")
-					img#houseInside.hiddenStuff(src="images/HouseInside.png")
-
-	.container(style="height:40vh")
+			//- .toggle
+			//- 	.toggle-title
+			//- 		h3
+			//- 			i
+			//- 			span.title-name   Can you visualize this in a different way?
+			//- 	.toggle-inner
+			//- 		p
+			//- 			| Sure.
+			//- 		img#houseOutside.animated.pulse.infinite(src="images/HouseOutside.png")
+			//- 		img#houseInside.hiddenStuff(src="images/HouseInside.png")
+			
 		
 
 
 			
 	script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.0/Chart.min.js")
-				
 	script(src="javascripts/jquery.js")
-	script(src="javascripts/ScrollMagic.js")
 	script(src="javascripts/index.js")
-	script(src="javascripts/infograph.js")
-	script(src="javascripts/var.js")
-	
-
-	
+	script(src="javascripts/containers.js")
+	script(src="javascripts/slider.js")
+	script(src="javascripts/house.js")
 	
 	

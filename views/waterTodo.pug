@@ -1,34 +1,41 @@
 .row
-	.col.textInfo
+	.textInfo
 		p
 			| A lot of our daily activities are related to water. Reduce the amount you used but also the amount of hot water you used as well.
 
+.row
 	.col
-		.todolist
-			.list
-				ul
-					li
-						input#pure-toggle-6(type="checkbox", hidden="")
-						label.pure-toggle(for="pure-toggle-6")
-							i.fa.fa-times.fa-2x
-							span Reduce showers to 5-6mins and shower 6 times a week
-					li
-						input#pure-toggle-7(type="checkbox", hidden="")
-						label.pure-toggle(for="pure-toggle-7")
-							i.fa.fa-times.fa-2x
-							span Use cold water if you don't need hot
-					li
-						input#pure-toggle-8(type="checkbox", hidden="")
-						label.pure-toggle(for="pure-toggle-8")
-							i.fa.fa-times.fa-2x
-							span Fix any leaks or dripping taps
-					li
-						input#pure-toggle-9(type="checkbox", hidden="")
-						label.pure-toggle(for="pure-toggle-9")
-							i.fa.fa-times.fa-2x
-							span Don't leave water running while doing something else
-					li
-						input#pure-toggle-10(type="checkbox", hidden="")
-						label.pure-toggle(for="pure-toggle-10")
-							i.fa.fa-times.fa-2x
-							span Stop water while shampooing and shaving
+		h5.tip
+			| Showers last 5-6 mins
+	.col
+		#tip5.range-slider
+			input.range-slider__range(type="range",value="0",min="0",max="4",step="1")
+			span.range-slider__value
+				| Never
+.row
+	.col
+		h5.tip
+			| Using cold water when not needing hot
+	.col
+		#tip6.range-slider
+			input.range-slider__range(type="range",value="0",min="0",max="4",step="1")
+			span.range-slider__value
+				| Never
+.row
+	.col
+		h5.tip
+			| Not leaving water running while doing something else
+	.col
+		#tip7.range-slider
+			input.range-slider__range(type="range",value="0",min="0",max="4",step="1")
+			span.range-slider__value
+				| Never
+.row
+	.col
+		h5.tip
+			| Stopping the water while shampooing and shaving
+	.col
+		#tip8.range-slider
+			input.range-slider__range(type="range",value="0",min="0",max="4",step="1")
+			span.range-slider__value
+				| Never

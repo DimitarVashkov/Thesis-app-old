@@ -26,7 +26,7 @@
 }
 
 .explain{
-  height: 60vh;
+  height: 5vh;
   margin-top: 10px;
   margin-left: 10px;
   margin-right: 10px;
@@ -42,10 +42,10 @@
 }
 
 .textInfo{
-  padding-top: 60px;
+  margin: 5vh;
 }
 
-.btn {
+.buttons {
   box-sizing: border-box;
   -webkit-appearance: none;
      -moz-appearance: none;
@@ -71,7 +71,7 @@
   font-family: 'Montserrat', sans-serif;
   font-weight: 700;
 }
-.btn:hover, .btn:focus {
+.buttons:hover, .buttons:focus {
   color: #fff;
   outline: 0;
 }
@@ -89,6 +89,23 @@
   transition: background 150ms ease-in-out, color 150ms ease-in-out;
 }
 .myBtn:hover, .myBtn:focus {
+  color: #fff;
+  background-position: 0 100%;
+}
+
+.saveBtn{
+   border-radius: 1em;
+  border-color: #2ecc71;
+  color: #2ecc71;
+  background-image: -webkit-linear-gradient(top, transparent 50%, #2ecc71 50%);
+  background-image: linear-gradient(to bottom, transparent 50%, #2ecc71 50%);
+  background-position: 0% 0%;
+  background-size: 210%;
+  -webkit-transition: background 150ms ease-in-out, color 150ms ease-in-out;
+  transition: background 150ms ease-in-out, color 150ms ease-in-out;
+  padding: 0.5em 1.2em;
+}
+.saveBtn:hover, .saveBtn:focus {
   color: #fff;
   background-position: 0 100%;
 }

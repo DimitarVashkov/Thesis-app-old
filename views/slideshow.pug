@@ -3,10 +3,11 @@ html
 	head
 		title Information
 		link(rel='stylesheet', href='/stylesheets/reveal.css')
-		link(rel='stylesheet', href='/stylesheets/theme/night.css')
+		link(rel='stylesheet', href='/stylesheets/theme/white.css')
 		link(rel='stylesheet', href='/lib/css/zenburn.css')
 		link(rel='stylesheet', href='/stylesheets/pyro.css')
 		link(rel='stylesheet', href='/stylesheets/var.css')
+		link(rel='stylesheet', href='/stylesheets/animate.css')
 	body
 		.reveal
 			.slides
@@ -17,69 +18,110 @@ html
 							| Explore our energy-efficient diet
 						p(id="firstP")
 							| The first step to change is awareness.
-						button.btn.myBtn.colorRed(style="margin:auto",id="return")
-							a(href="/main")
+						form(action="/back",method="POST",style="position:relative;top:90%")
+							button.buttons.myBtn.colorRed(type="submit",name="back",value = "leave",style="margin:auto",id="return")
 								| Back
-					section
-
+					section(data-background-color="#85144b",data-state="state1")
+						#state1.pyramidContainer
+							.level1
+							.level2
+							.level3
+							.level4
+							.level5
 						h3
 							| Rarely or never
-						p
-							| 10+ min showers or baths
-						p
-							| Overdrying clothes
-						p
-							| Underfilling or overfilling laundry
-						p
-							| Putting hot food in the fridge
+							img(src="images/emoji/angry.png",id="angry")
+						#textDiv1.hidden
+							p
+								| 10+ min showers or baths
+							p
+								| Overdrying clothes
+							p
+								| Underfilling or overfilling laundry
+							p
+								| Putting hot food in the fridge
 
-						#triangle.pyroBox.red
-					section
-						.pyroBoxSmall.orange
+						//-#triangle.pyroBox.red
+					section(data-background-color="#FF851B",data-state="state2")
+						//-.pyroBoxSmall.orange
+						#state2.pyramidContainer
+							.level1
+							.level2
+							.level3
+							.level4
+							.level5
 						h3
-							| Ocassionally 
-						p
-							| Machine drying on low temperature
-						p
-							| High temperature wash for whites
-						p
-							| Dishwashing by hand
+							| Once a week or 2 weeks
+							img(src="images/emoji/sad.png",id="sad")
+						#textDiv2.hidden
+							
+							p
+								| Machine drying on low temperature
+							p
+								| High temperature wash for whites
+							p
+								| Dishwashing by hand
 
-						.pyroBoxBig.orange
-					section
-						.pyroBoxSmall.yellow
+						//-.pyroBoxBig.orange
+					section(data-background-color="#FFDC00",data-state="state3")
+						//-.pyroBoxSmall.yellow
+						#state3.pyramidContainer
+							.level1
+							.level2
+							.level3
+							.level4
+							.level5
 						h3
-							| Sometimes
-						p
-							| Cold washing laundry with high spinning
-						p
-							| Dishwashing on low temperature
-						p
-							| Heating using electricity but being efficient
-						.pyroBoxBig.yellow
-					section
-						.pyroBoxSmall.blue
+							| Twice a week or less
+							img(src="images/emoji/shocked.png",id="shocked")
+						#textDiv3.hidden
+							
+							p
+								| Cold washing laundry with high spinning
+							p
+								| Dishwashing on low temperature
+							p
+								| Heating using electricity but being efficient
+						//-.pyroBoxBig.yellow
+					section(data-background-color="#0074D9",data-state="state4")
+						//-.pyroBoxSmall.blue
+						#state4.pyramidContainer
+							.level1
+							.level2
+							.level3
+							.level4
+							.level5
 						h3
-							| Often
-						p
-							| 5-6 min showers
-						p
-							| Keeping your bedroom a bit colder (~16º)
+							| Almost every day
+							img(src="images/emoji/happy.png",id="happy")
+						#textDiv4.hidden
+							p
+								| 5-6 min showers
+							p
+								| Keeping your bedroom a bit colder before going to bed (~16º)
 
-						.pyroBoxBig.blue
-					section
-						.pyroBoxSmall.green
+						//-.pyroBoxBig.blue
+					section(data-background-color="#2ECC40",data-state="state5")
+						//-.pyroBoxSmall.green
+						#state5.pyramidContainer
+							.level1
+							.level2
+							.level3
+							.level4
+							.level5
 						h3
 							| Always
-						p
-							| Thermostat at 18º
-						p
-							| Hanging clothes to dry
-						p
-							| Cover pots and pans when cooking
-						p
-							| Not leaving the water running while doing something else
-						.pyroBoxBig.green
+							img(src="images/emoji/happy-2.png",id="happy-2")
+						#textDiv5.hidden
+							p
+								| Thermostat at 18º
+							p
+								| Hanging clothes to dry
+							p
+								| Cover pots and pans when cooking
+							p
+								| Not leaving the water running while doing something else
+						//-.pyroBoxBig.green
 					section
 						h3
 							| The second step to change is action.
@@ -109,6 +151,10 @@ html
 			$("#firstP").text("Click the button below to go to the main page!");
 			Reveal.slide(0);
 			});
+		
+		script(src="javascripts/slideshowStates.js")
+		
+
 
 
 

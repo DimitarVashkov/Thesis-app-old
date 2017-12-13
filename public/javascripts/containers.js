@@ -1,18 +1,15 @@
-$(".info button").click(function(){
+$(".info .myBtn").click(function(){
   var name = $(this).text();
   $(".col>h2.activeInfo").removeClass("activeInfo");
   $(this).addClass("activeInfo");
-  console.log(name);
   $(".explain>div").addClass("hiddenStuff");
   $('html,body').animate({
         scrollTop: $("#focusDiv").offset().top},
         'slow');
   $("#focusDiv").removeClass("heightLimited");
+  $("#pref").removeClass("hiddenStuff");
 
   switch(name){
-    case "Start":
-      $(".containerPyramid").removeClass("hiddenStuff");
-      break;
     case "Heating":
       $(".containerHeating").removeClass("hiddenStuff");
     break;

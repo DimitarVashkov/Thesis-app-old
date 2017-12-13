@@ -7,6 +7,8 @@ var connection = mysql.createConnection({
 
     });
 
+var tips = [];
+
 connection.query('CREATE DATABASE IF NOT EXISTS main', function (err) {
     if (err) throw err;
     connection.query('USE main', function (err) {
@@ -31,6 +33,25 @@ connection.query('CREATE DATABASE IF NOT EXISTS main', function (err) {
             +  ')', function (err) {
                 if (err) throw err;
             });
+
+        connection.query('CREATE TABLE IF NOT EXISTS tips('
+            + 'name VARCHAR(6),'
+            + 'PRIMARY KEY (name),'
+            + 'value int'
+            + ')', function (err) {
+                if (err) throw err;
+            });
+
+        connection.query('SELECT * FROM tips', function (error, results, fields){
+            console.log(results);
+        });
+
+        // for(var i=1;i<17;i++){
+        //     connection.query('INSERT INTO tips (name,value) VALUES (?,?)',['tip'+i,0], function (err) {
+        //         if (err) throw err;
+        //     });
+        // }
+
         // connection.query('INSERT INTO users (name,pass) VALUES (?,?)',['Dimitar','root'], function (err) {
         //         if (err) throw err;
         //     });

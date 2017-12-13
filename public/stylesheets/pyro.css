@@ -1,3 +1,61 @@
+.reduceSize{
+	width: 6vh;
+	height: 6vh;
+	margin: 1vh;
+}
+
+.hidden{
+	display: none;
+}
+
+
+.pyramidContainer{
+	margin: 0px;
+	padding: 0px;
+	position: absolute;
+	height: 115vh;
+	width: 5vh;
+	right:116%;
+	top: -15%;
+	bottom: -15%;
+}
+
+.mainWidth{
+	width: 100%;
+}
+
+.level1{
+	height: 20%;
+	width: 100%;
+	position: relative;
+	background-color: #85144b;
+}
+.level2{
+	background-color: #FF851B;
+	height: 20%;
+	width: 100%;
+	position: relative;
+}
+.level3{
+	height: 20%;
+	width: 100%;
+	position: relative;
+	background-color: #FFDC00;
+}
+.level4{
+	height: 20%;
+	width: 100%;
+	position: relative;
+	background-color: #0074D9;
+}
+.level5{
+	background-color:#2ECC40;
+	height: 20%;
+	width: 100%;
+	position: relative;
+}
+
+
 .reveal .pyroBox{
 	width: 35vh;
 	height: 3vh;
